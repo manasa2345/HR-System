@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {AngularFireAuth} from "@angular/fire/auth";
+import {Router} from "@angular/router";
+import {AngularFireDatabase} from "@angular/fire/database";
+import {shareReplay} from "rxjs/operators";
 
 @Component({
   selector: 'app-employees-list',
@@ -7,13 +11,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EmployeesListPage implements OnInit {
 
-  constructor() { }
+  constructor(
+      private authObj: AngularFireAuth,
+      private router: Router,
+      private afdb: AngularFireDatabase
+  ) {}
 
   ngOnInit() {
+    this.fetchEmployees();
   }
 
   fetchEmployees() {
-    this.http.get('')
+    const emp = this.afdb.object('employees').valueChanges().subscribe((data) => {
+      console.log(data);
+    });
+    //console.log(emp);
+    return emp;
   }
 
 }
