@@ -3,9 +3,12 @@ import {AngularFireAuth} from "@angular/fire/auth";
 import {Router} from "@angular/router";
 import {AngularFireDatabase} from "@angular/fire/database";
 import {shareReplay} from "rxjs/operators";
+<<<<<<< HEAD
 import { LoadingController } from '@ionic/angular';
 import * as firebase from 'firebase';
 import { AlertController } from '@ionic/angular';
+=======
+>>>>>>> 4b91c281d2f336e2d039ba035411163177000743
 
 @Component({
   selector: 'app-employees-list',
@@ -14,6 +17,7 @@ import { AlertController } from '@ionic/angular';
 })
 export class EmployeesListPage implements OnInit {
 
+<<<<<<< HEAD
   employees = [];
   ref = firebase.database().ref('/employees');
 
@@ -57,6 +61,16 @@ export class EmployeesListPage implements OnInit {
     });
   
     await alert.present();
+=======
+  constructor(
+      private authObj: AngularFireAuth,
+      private router: Router,
+      private afdb: AngularFireDatabase
+  ) {}
+
+  ngOnInit() {
+    this.fetchEmployees();
+>>>>>>> 4b91c281d2f336e2d039ba035411163177000743
   }
   
   
@@ -67,8 +81,17 @@ export class EmployeesListPage implements OnInit {
   //     private afdb: AngularFireDatabase
   // ) {}
 
+<<<<<<< HEAD
   ngOnInit() {
     // this.fetchEmployees();
+=======
+  fetchEmployees() {
+    const emp = this.afdb.object('employees').valueChanges().subscribe((data) => {
+      console.log(data);
+    });
+    //console.log(emp);
+    return emp;
+>>>>>>> 4b91c281d2f336e2d039ba035411163177000743
   }
 
 
