@@ -83,14 +83,6 @@ export class EmployeesListPage implements OnInit {
   //   return emp;
   // }
 
-  
-  // fetchEmployees() {
-  //   this.itemsRef = this.afdb.list('employees');
-  //   this.items = this.itemsRef.snapshotChanges().map(changes => {
-  //     return changes.map(c => ({ key: c.payload.key, ...c.payload.val() }));
-  //   });
-  // }
-
 }
 
 export const snapshotToArray = snapshot => {

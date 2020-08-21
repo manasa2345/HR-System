@@ -94,7 +94,8 @@ export class RegisterPage implements OnInit {
           joinDate: value.joinDate
         }).then( ()=>{
           // this.router.navigateByUrl('/home');
-          this.navCtrl.navigateForward('/home');
+          // this.navCtrl.navigateForward('/home');
+          this.router.navigate(['/detail/'+r.user.uid]);
         });
         // this.router.navigate(['/home/'+newEmployee.key]);
       }).catch(e => {
