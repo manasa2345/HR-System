@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { EditPageRoutingModule } from './edit-routing.module';
 
 import { EditPage } from './edit.page';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [

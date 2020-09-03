@@ -6,6 +6,8 @@ import {shareReplay} from "rxjs/operators";
 import { LoadingController } from '@ionic/angular';
 import * as firebase from 'firebase';
 import { AlertController } from '@ionic/angular';
+import { NavController } from '@ionic/angular';
+import { NavigationExtras } from '@angular/router';
 
 @Component({
   selector: 'app-employees-list',
@@ -20,18 +22,26 @@ export class EmployeesListPage implements OnInit {
   constructor(
     public router: Router, 
     public loadingController: LoadingController,
-    public alertController: AlertController) {
+    public alertController: AlertController,
+    public navCtrl: NavController) {
     this.ref.on('value', resp => {
       this.employees = [];
       this.employees = snapshotToArray(resp);
     });
   }
 
+
   addEmployee() {
     this.router.navigate(['/register']);
   }
 
   edit(key) {
+    // let navigationExtras: NavigationExtras = {
+    //   queryParams: {
+    //       key: JSON.stringify(key)
+    //   }
+    // };
+    // this.navCtrl.navigateForward(['edit'], navigationExtras);
     this.router.navigate(['/edit/'+key]);
   }
 

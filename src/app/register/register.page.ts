@@ -89,7 +89,7 @@ export class RegisterPage implements OnInit {
           position: value.position,
           dob: value.dob,
           email: value.email,
-          phone: value.mobile,
+          mobile: value.mobile,
           anniversary: value.anniversary,
           joinDate: value.joinDate
         }).then( ()=>{
