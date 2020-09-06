@@ -34,6 +34,9 @@ const routes: Routes = [
   {
     path: 'edit/:key', loadChildren: './edit/edit.module#EditPageModule' 
   },
+  {
+    path: 'detail/:key', loadChildren: './detail/detail.module#DetailPageModule'
+  },
 ];
 
 @NgModule({
