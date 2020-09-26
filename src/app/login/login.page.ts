@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { FormControl, FormGroupDirective, FormBuilder, FormGroup, NgForm, Validators, FormArray } from '@angular/forms';
 import { NavController } from '@ionic/angular';
 
+import { LoginService } from './login.service';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -20,6 +22,7 @@ export class LoginPage implements OnInit {
     private navCtrl: NavController,
     private formBuilder: FormBuilder,
     private authObj: AngularFireAuth,
+    private loginService: LoginService,
     private router: Router
     ) {}
 
@@ -58,6 +61,7 @@ export class LoginPage implements OnInit {
       this.authObj.signInWithEmailAndPassword(value.email, value.password).then( (res)=>{
         
         this.errorMessage = "";
+        this.loginService.login();
         this.navCtrl.navigateForward('/home');
   
       }, e => {

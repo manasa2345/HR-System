@@ -20,6 +20,7 @@ export class EmployeesListPage implements OnInit {
   ref = firebase.database().ref('/employees');
 
   constructor(
+    private authObj: AngularFireAuth,
     public router: Router, 
     public loadingController: LoadingController,
     public alertController: AlertController,
@@ -61,6 +62,11 @@ export class EmployeesListPage implements OnInit {
           text: 'Okay',
           handler: () => {
             firebase.database().ref('employees/'+key).remove();
+          //   this.authObj.first().subscribe(authState => {
+          //     authState.auth.delete()
+          //        .then(_ => console.log('deleted!'));
+          //        .catch(e => console.error(e));
+          //  });
           }
         }
       ]

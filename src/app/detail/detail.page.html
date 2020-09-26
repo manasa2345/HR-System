@@ -1,25 +1,25 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
+      <ion-menu-button menu="mainNav"></ion-menu-button>
     </ion-buttons>
-    <ion-title>Employee Details</ion-title>
+    <ion-title>{{employee.employeeName}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
   <ion-card>
     <ion-card-content>
-      <ion-card-title>{{employee.employeeName}}</ion-card-title>
+      <!-- <ion-card-title>{{}}</ion-card-title> -->
 
-      <p><b>Employee ID: </b>{{employee.employeeId}}</p>
-      <p><b>Email: </b>{{employee.email}}</p>
-      <p><b>Department: </b>{{employee.department}}</p>
-      <p><b>Position: </b>{{employee.position}}</p>
-      <p><b>DOB: </b>{{employee.dob}}</p>
-      <p><b>Anniversary: </b>{{employee.anniversary}}</p>
-      <p><b>Mobile: </b>{{employee.mobile}}</p>
-      <p><b>Join Date: </b>{{employee.joinDate}}</p>
+      <div><b>Employee ID: </b>{{employee.employeeId}}</div><hr>
+      <div><b>Email: </b>{{employee.email}}</div><hr>
+      <div><b>Department: </b>{{employee.department}}</div><hr>
+      <div><b>Position: </b>{{employee.position}}</div><hr>
+      <div><b>DOB: </b>{{employee.dob}}</div><hr>
+      <div><b>Anniversary: </b>{{employee.anniversary}}</div><hr>
+      <div><b>Mobile: </b>{{employee.mobile}}</div><hr>
+      <div><b>Join Date: </b>{{employee.joinDate}}</div>
     </ion-card-content>
   </ion-card>
 </ion-content>
