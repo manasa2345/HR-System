@@ -12,15 +12,29 @@
 <ion-content [fullscreen]="true">
   <ion-card>
     <ion-card-header>
-        <ion-card-title>Manasa</ion-card-title>
+        <ion-card-title class="ion-padding" color="primary">{{correctEmployee.name}}</ion-card-title>
+        <!-- <ion-card-title>Manasa</ion-card-title> -->
     </ion-card-header>
     <ion-card-content>
-      <div>
-        <h3>Emp ID:</h3>
+      <div class="ion-padding">
+        <ion-label class="ion-padding ion-text-uppercase" color="tertiary">Emp ID:</ion-label>
+        <span>{{correctEmployee.employeeId}}</span>
       </div>
-      <div>
-        <ion-label>Designation:</ion-label>
-        <span>Intern</span>
+      <div class="ion-padding">
+        <ion-label class="ion-padding ion-text-uppercase" color="tertiary">Department:</ion-label>
+        <span>{{correctEmployee.department}}</span>
+      </div>
+      <div class="ion-padding">
+        <ion-label class="ion-padding ion-text-uppercase" color="tertiary">Mobile:</ion-label>
+        <span>{{correctEmployee.mobile}}</span>
+      </div>
+      <!-- <div class="ion-padding">
+        <ion-label class="ion-padding ion-text-uppercase">Join Date:</ion-label>
+        <span>{{correctEmployee.joinDate}}</span>
+      </div> -->
+      <div class="ion-padding">
+        <ion-label class="ion-padding ion-text-uppercase" color="tertiary">Designation:</ion-label>
+        <span>{{correctEmployee.position}}</span>
       </div>
     </ion-card-content>
   </ion-card>

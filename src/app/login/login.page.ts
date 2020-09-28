@@ -62,7 +62,9 @@ export class LoginPage implements OnInit {
         
         this.errorMessage = "";
         this.loginService.login();
-        this.navCtrl.navigateForward('/home');
+        // this.navCtrl.navigateForward('/home');
+        // alert(value.email);
+        this.router.navigate(['/home/'+value.email]);
   
       }, e => {
         this.errorMessage = "Enter the correct details";

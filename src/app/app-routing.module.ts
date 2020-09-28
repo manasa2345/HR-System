@@ -5,12 +5,13 @@ import { LoginGuard } from './login/login.guard';
 
 const routes: Routes = [
   {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule), canLoad: [LoginGuard]
+    path: 'home/:email',
+    // loadChildren: () => import('./home/home.module').then( m => m.HomePageModule), canLoad: [LoginGuard]
+    loadChildren: './home/home.module#HomePageModule', canLoad: [LoginGuard] 
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'home/abc@ac.in',
     pathMatch: 'full'
   },
   {
@@ -27,14 +28,15 @@ const routes: Routes = [
   },
   {
     path: 'forgot',
-    loadChildren: () => import('./forgot/forgot.module').then( m => m.ForgotPageModule), canLoad: [LoginGuard]
+    loadChildren: () => import('./forgot/forgot.module').then( m => m.ForgotPageModule)
   },
   {
     path: 'employees-list',
     loadChildren: () => import('./employees-list/employees-list.module').then( m => m.EmployeesListPageModule), canLoad: [LoginGuard]
   },
   {
-    path: 'edit/:key', loadChildren: './edit/edit.module#EditPageModule', canLoad: [LoginGuard] 
+    path: 'edit/:key', 
+    loadChildren: './edit/edit.module#EditPageModule', canLoad: [LoginGuard] 
   },
   {
     path: 'detail/:key', loadChildren: './detail/detail.module#DetailPageModule', canLoad: [LoginGuard]
