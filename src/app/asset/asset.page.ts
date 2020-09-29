@@ -17,7 +17,7 @@ import { NavigationExtras } from '@angular/router';
 export class AssetPage implements OnInit {
 
   assets = [];
-  ref = firebase.database().ref('/assets');
+  ref = firebase.database().ref('asset/');
   constructor(
     private authObj: AngularFireAuth,
     public router: Router, 
@@ -27,6 +27,7 @@ export class AssetPage implements OnInit {
     this.ref.on('value', resp => {
       this.assets = [];
       this.assets = snapshotToArray(resp);
+      console.log(this.assets)
     }); 
   }
 
@@ -81,6 +82,7 @@ export const snapshotToArray = snapshot => {
   snapshot.forEach(childSnapshot => {
       let item = childSnapshot.val();
       item.key = childSnapshot.key;
+      //alert(item.key);
       returnArr.push(item);
   });
 
