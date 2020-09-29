@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button menu="mainNav"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+     Assets
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/asset/create-asset"><ion-icon name="add-circle"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item-sliding *ngFor="let asset of assets">
+      <ion-item lines="full" routerLink="/asset/{{asset.key}}">
+        <!--<ion-icon name="person-outline" slot="start"></ion-icon>-->
+        {{asset.id}}
+      </ion-item>
+      <ion-item-options side="end">
+        <ion-item-option color="primary" (click)="edit(asset.key)">
+          <ion-icon name="pencil-outline" slot="start"></ion-icon>
+          EDIT
+        </ion-item-option>
+        <ion-item-option color="danger" (click)="delete(asset.key)">
+          <ion-icon name="trash-outline" slot="start"></ion-icon>  
+          DELETE
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>
