@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { DataSnapshot } from '@angular/fire/database/interfaces';
 import { ActivatedRoute, Router } from '@angular/router';
 import * as firebase from 'Firebase';
+import { LoginService } from '../login/login.service';
 
 @Component({
   selector: 'app-home',
@@ -15,7 +16,8 @@ export class HomePage {
   // employee = {}
   constructor(
     private route: ActivatedRoute,
-    public router: Router
+    public router: Router,
+    private loginService: LoginService
   )
   {
     this.getEmployeeInfo(this.route.snapshot.paramMap.get('email'));
@@ -23,6 +25,7 @@ export class HomePage {
 
   getEmployeeInfo(email) {
     console.log(email);
+    this.loginService.user = email;
   //   firebase.database().ref('employees/').orderByChild('email').equalTo(email).on('value', resp => {
   //     resp.forEach(childSnapshot => {
   //       let employee = snapshotToObject(resp);
@@ -46,8 +49,6 @@ export class HomePage {
         }
       });
     });
-  
-    
 
   }
 }

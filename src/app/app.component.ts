@@ -5,6 +5,9 @@ import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import * as firebase from 'firebase';
 import { environment } from '../environments/environment.prod';
+import { HomePage } from './home/home.page';
+import { LoginPage } from './login/login.page';
+import { LoginService } from './login/login.service';
 
 @Component({
   selector: 'app-root',
@@ -15,7 +18,8 @@ export class AppComponent {
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
-    private statusBar: StatusBar
+    private statusBar: StatusBar,
+    private loginService: LoginService
   ) {
     this.initializeApp();
   }

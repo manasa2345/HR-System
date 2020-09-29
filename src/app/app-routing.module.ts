@@ -41,6 +41,10 @@ const routes: Routes = [
   {
     path: 'detail/:key', loadChildren: './detail/detail.module#DetailPageModule', canLoad: [LoginGuard]
   },
+  {
+    path: 'timesheet',
+    loadChildren: () => import('./timesheet/timesheet.module').then( m => m.TimesheetPageModule)
+  },
 ];
 
 @NgModule({
