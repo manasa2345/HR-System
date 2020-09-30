@@ -19,7 +19,7 @@ const routes: Routes = [
   },
   {
     path: 'asset-details/:key',
-    loadChildren: './asset-details/asset-details.module#AssetDetailsPageModule', canLoad:[LoginGuard]
+    loadChildren: './asset/asset-details/asset-details.module#AssetDetailsPageModule', canLoad:[LoginGuard]
   }
 ];
 
