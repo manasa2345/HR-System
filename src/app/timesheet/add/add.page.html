@@ -1,9 +1,45 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>add</ion-title>
+  <ion-toolbar color="primary">
+    <ion-title>Add Timesheet</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <form [formGroup]="timesheetForm" (ngSubmit)="addTimesheet(timesheetForm.value)">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Add an entry in your Timesheet</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item>
+          <ion-label position="floating">Email ID</ion-label>
+          <!-- <ion-input type="text" [(ngModel)]="employee.email"></ion-input> -->
+          <ion-input type="text" formControlName="email"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Date Done</ion-label>
+          <!-- <ion-input type="password" [(ngModel)]="employee.password"></ion-input> -->
+          <ion-datetime displayFormat="DD/MM/YYYY" formControlName="date" ></ion-datetime>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Work</ion-label>
+          <!-- <ion-input type="text" [(ngModel)]="employee.department"></ion-input> -->
+          <ion-input type="text" formControlName="work"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Time spent (in hrs)</ion-label>
+          <!-- <ion-input type="text" [(ngModel)]="employee.position"></ion-input> -->
+          <ion-input type="number" formControlName="timeSpent"></ion-input>
+        </ion-item>
+        <ion-item>
+        <ion-item>
+          <ion-label position="floating">Assigned By</ion-label>
+          <!-- <ion-input type="phone" [(ngModel)]="employee.mobile"></ion-input> -->
+          <ion-input type="text" formControlName="assignedBy"></ion-input>
+        </ion-item>
+        <ion-item>
+        <ion-button type="submit" class="ion-padding, submit-btn" expand="block" [disabled]="!registerForm.valid">Add</ion-button>
+      </ion-card-content>
+    </ion-card>
+  </form>
 </ion-content>

@@ -1,5 +1,6 @@
 import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { LoginService } from '../login/login.service';
 import { Timesheet } from './timesheet.model';
 
@@ -34,9 +35,14 @@ export class TimesheetPage implements OnInit {
   ];
 
   constructor(
-    private loginService: LoginService
+    private loginService: LoginService,
+    private router: Router
   ) { 
     this.mymail = loginService.getUser();
+  }
+
+  addTimesheet() {
+    this.router.navigateByUrl('/timesheet/add');
   }
 
   ngOnInit() {
