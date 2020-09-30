@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button menu="mainNav"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>{{asset}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card>
+    <ion-card-content>
+      <!-- <ion-card-title>{{}}</ion-card-title> -->
+
+      <div><b> ID: </b>{{asset.id}}</div><hr>
+      <div><b>Type: </b>{{asset.type}}</div><hr>
+      <div><b>Loaction: </b>{{asset.location}}</div><hr>
+      <div><b>Department: </b>{{asset.department}}</div><hr>
+      </ion-card-content>
+  </ion-card>
+</ion-content>

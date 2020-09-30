@@ -41,7 +41,8 @@ export class AssetPage implements OnInit {
     //   }
     // };
     // this.navCtrl.navigateForward(['edit'], navigationExtras);
-   this.router.navigate(['/edit-asset/'+key]);
+   //this.router.navigate(['/edit-asset/'+key]);
+  // console.log(key);
   }
   async delete(key) {
     const alert = await this.alertController.create({

@@ -44,6 +44,7 @@ export class EmployeesListPage implements OnInit {
     // };
     // this.navCtrl.navigateForward(['edit'], navigationExtras);
     this.router.navigate(['/edit/'+key]);
+    //console.log(key);
   }
 
   async delete(key) {

@@ -61,6 +61,7 @@ export class EditPage implements OnInit {
   
   updateEmployee() {
     let newInfo = firebase.database().ref('employees/'+this.route.snapshot.paramMap.get('key')).update(this.editForm.value);
+    console.log('/detail/'+this.route.snapshot.paramMap.get('key'));
     this.router.navigate(['/detail/'+this.route.snapshot.paramMap.get('key')]);
   }
 

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { PreloadAllModules,Routes, RouterModule } from '@angular/router';
+import { LoginGuard } from '../login/login.guard';
 
 import { AssetPage } from './asset.page';
 
@@ -15,6 +16,10 @@ const routes: Routes = [
   {
     path: 'edit-asset',
     loadChildren: () => import('./edit-asset/edit-asset.module').then( m => m.EditAssetPageModule)
+  },
+  {
+    path: 'asset-details/:key',
+    loadChildren: () => import('./asset-details/asset-details.module#AssetDetailsPageModule'), canLoad:[LoginGuard]
   }
 ];
 
