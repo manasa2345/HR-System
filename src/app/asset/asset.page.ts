@@ -58,7 +58,7 @@ export class AssetPage implements OnInit {
         }, {
           text: 'Okay',
           handler: () => {
-            firebase.database().ref('assets/'+key).remove();
+            firebase.database().ref('asset/'+key).remove();
           //   this.authObj.first().subscribe(authState => {
           //     authState.auth.delete()
           //        .then(_ => console.log('deleted!'));

@@ -42,16 +42,14 @@ const routes: Routes = [
     path: 'detail/:key', loadChildren: './detail/detail.module#DetailPageModule', //canLoad: [LoginGuard]
   },
   {
-<<<<<<< HEAD
     path: 'timesheet',
     loadChildren: () => import('./timesheet/timesheet.module').then( m => m.TimesheetPageModule)
   },
-=======
+  {
     path: 'asset',
     loadChildren: () => import('./asset/asset.module').then( m => m.AssetPageModule),// canLoad: [LoginGuard]
   },
 
->>>>>>> c70d1197677a480135e75b827d789eb6324b3e61
 ];
 
 @NgModule({
