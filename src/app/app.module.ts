@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
 import { IonicStorageModule } from '@ionic/storage';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 import { AngularFireModule } from '@angular/fire';
@@ -24,6 +25,8 @@ import { environment } from '../environments/environment.prod';
     BrowserModule, 
     IonicModule.forRoot(), 
     IonicStorageModule.forRoot(),
+    FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule, 
     AngularFireModule.initializeApp(environment.config),
     AngularFireAuthModule,

@@ -14,8 +14,8 @@ export class TimesheetPage implements OnInit {
   mymail: any;
 
   pipe = new DatePipe('en-US');
-  const now = Date.now();
-  const myFormattedDate = this.pipe.transform(this.now, 'short');
+  now = Date.now();
+  myFormattedDate = this.pipe.transform(this.now, 'short');
 
   timesheets: Timesheet[] = [
     {

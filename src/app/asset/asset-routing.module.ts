@@ -19,7 +19,7 @@ const routes: Routes = [
   },
   {
     path: 'asset-details/:key',
-    loadChildren: () => import('./asset-details/asset-details.module#AssetDetailsPageModule'), canLoad:[LoginGuard]
+    loadChildren: './asset-details/asset-details.module#AssetDetailsPageModule', canLoad:[LoginGuard]
   }
 ];
 
