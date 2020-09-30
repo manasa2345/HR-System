@@ -15,7 +15,7 @@
 <ion-content>
   <ion-list>
     <ion-item-sliding *ngFor="let asset of assets">
-      <ion-item lines="full" routerLink="/asset-details/{{asset.key}}">
+      <ion-item lines="full" routerLink="/asset/asset-details/{{asset.key}}">
         <p>{{asset.key}}</p><br>
         {{asset.id}}
         {{asset.type}}
