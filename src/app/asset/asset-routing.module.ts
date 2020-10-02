@@ -14,8 +14,8 @@ const routes: Routes = [
     loadChildren: () => import('./create-asset/create-asset.module').then( m => m.CreateAssetPageModule)
   },
   {
-    path: 'edit-asset',
-    loadChildren: () => import('./edit-asset/edit-asset.module').then( m => m.EditAssetPageModule)
+    path: 'edit-asset/:key',
+    loadChildren: './edit-asset/edit-asset.module#EditAssetPageModule'
   },
   {
     path: 'asset-details/:key',
