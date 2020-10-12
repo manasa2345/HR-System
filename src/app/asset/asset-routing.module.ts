@@ -15,11 +15,11 @@ const routes: Routes = [
   },
   {
     path: 'edit-asset/:key',
-    loadChildren: './edit-asset/edit-asset.module#EditAssetPageModule'
+    loadChildren: './edit-asset/edit-asset.module#EditAssetPageModule', canLoad:[LoginGuard]
   },
   {
     path: 'asset-details/:key',
-    loadChildren: './asset-details/asset-details.module#AssetDetailsPageModule', //canLoad:[LoginGuard]
+    loadChildren: './asset-details/asset-details.module#AssetDetailsPageModule', canLoad:[LoginGuard]
   }
 ];
 
