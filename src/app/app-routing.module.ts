@@ -7,7 +7,7 @@ const routes: Routes = [
   {
     path: 'home/:email',
     // loadChildren: () => import('./home/home.module').then( m => m.HomePageModule), canLoad: [LoginGuard]
-    loadChildren: './home/home.module#HomePageModule', canLoad: [LoginGuard] 
+    loadChildren: './home/home.module#HomePageModule',canLoad: [LoginGuard] 
   },
   {
     path: '',

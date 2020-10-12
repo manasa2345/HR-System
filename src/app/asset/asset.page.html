@@ -16,11 +16,10 @@
   <ion-list>
     <ion-item-sliding *ngFor="let asset of assets">
       <ion-item lines="full" routerLink="/asset/asset-details/{{asset.key}}">
-        <p>{{asset.key}}</p><br>
-        {{asset.id}}
-        {{asset.type}}
-        {{asset.location}}
-        {{asset.department}}
+        
+        <p><b>Type: </b></p>{{asset.type}}
+        <!-- <p><b>Location: </b></p>{{asset.location}} -->
+        <p slot="end"><b>Department: </b>{{asset.department}}</p>
       </ion-item>
       <ion-item-options side="end">
         <ion-item-option color="primary" (click)="edit(asset.key)">
