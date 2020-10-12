@@ -22,7 +22,7 @@ export class EditAssetPage implements OnInit {
       this.editAssetForm = this.formBuilder.group({
         'id' : [null, Validators.required],
         'type' : [null, Validators.required],
-        'email' : [null, Validators.required],
+        'location' : [null, Validators.required],
         'department' : [null, Validators.required],
        
      });
@@ -48,7 +48,8 @@ export class EditAssetPage implements OnInit {
   updateAsset()
   {
     let newInfo = firebase.database().ref('asset/'+this.route.snapshot.paramMap.get('key')).update(this.editAssetForm.value);
-  this.router.navigate(['/asset/'+this.route.snapshot.paramMap.get('key')]);
+    console.log('/asset/'+this.route.snapshot.paramMap.get('key'));
+    this.router.navigate(['/asset/'/*+this.route.snapshot.paramMap.get('key')*/]);
   }
 
 }

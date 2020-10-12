@@ -17,7 +17,7 @@ import { NavigationExtras } from '@angular/router';
 export class AssetPage implements OnInit {
 
   assets = [];
-  ref = firebase.database().ref('asset/');
+  ref = firebase.database().ref('/asset');
   constructor(
     private authObj: AngularFireAuth,
     public router: Router, 
@@ -41,8 +41,8 @@ export class AssetPage implements OnInit {
     //   }
     // };
     // this.navCtrl.navigateForward(['edit'], navigationExtras);
-   //this.router.navigate(['/edit-asset/'+key]);
-  // console.log(key);
+   this.router.navigate(['/asset/edit-asset/'+key]);
+   console.log(key);
   }
   async delete(key) {
     const alert = await this.alertController.create({
