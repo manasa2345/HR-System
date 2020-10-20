@@ -8,18 +8,6 @@ const routes: Routes = [
   {
     path: '',
     component: AssetPage
-  },
-  {
-    path: 'create-asset',
-    loadChildren: () => import('./create-asset/create-asset.module').then( m => m.CreateAssetPageModule)
-  },
-  {
-    path: 'edit-asset/:key',
-    loadChildren: './edit-asset/edit-asset.module#EditAssetPageModule', canLoad:[LoginGuard]
-  },
-  {
-    path: 'asset-details/:key',
-    loadChildren: './asset-details/asset-details.module#AssetDetailsPageModule', canLoad:[LoginGuard]
   }
 ];
 

@@ -7,7 +7,7 @@
      Assets
     </ion-title>
     <ion-buttons slot="end">
-      <ion-button routerLink="/asset/create-asset"><ion-icon name="add-circle"></ion-icon></ion-button>
+      <ion-button routerLink="/create-asset"><ion-icon name="add-circle"></ion-icon></ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -15,7 +15,7 @@
 <ion-content>
   <ion-list>
     <ion-item-sliding *ngFor="let asset of assets">
-      <ion-item lines="full" routerLink="/asset/asset-details/{{asset.key}}">
+      <ion-item lines="full" routerLink="/asset-details/{{asset.key}}">
         
         <p><b>Type: </b></p>{{asset.type}}
         <!-- <p><b>Location: </b></p>{{asset.location}} -->

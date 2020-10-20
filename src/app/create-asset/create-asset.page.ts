@@ -37,21 +37,7 @@ export class CreateAssetPage implements OnInit {
   }
 
   createAsset(value) {
-     alert('hi');
-     /*this.afdb.object('asset/').set({
-      id: value.id,
-      type: value.type,
-      location:value.location,
-      department: value.department
-    }).then( ()=>{
-      // this.router.navigateByUrl('/home');
-      // this.navCtrl.navigateForward('/home');
-      this.router.navigate(['/asset/']);
-    }).catch(e => {
-
-      console.log(e);
-    })*/
-    let newInfo = firebase.database().ref('asset/').push();
+  let newInfo = firebase.database().ref('asset/').push();
   newInfo.set(this.createAssetForm.value);
   this.router.navigate(['/asset/'/*+newInfo.key*/]);
   
