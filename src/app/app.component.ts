@@ -15,12 +15,15 @@ import { LoginService } from './login/login.service';
   styleUrls: ['app.component.scss']
 })
 export class AppComponent {
+  email:any;
+  logoimg: any = "../assets/img/logo.png";
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
     private loginService: LoginService
   ) {
+    this.email = loginService.getUser();
     this.initializeApp();
   }
 

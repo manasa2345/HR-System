@@ -1,0 +1,12 @@
+.vertical-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    flex-direction: column;
+  }
+
+  .vertical-center ion-img{
+      height: auto;
+      width: 120px;
+  }

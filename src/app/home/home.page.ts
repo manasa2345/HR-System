@@ -11,6 +11,9 @@ import { LoginService } from '../login/login.service';
 })
 export class HomePage {
 
+  static email;
+  static readonly emailConsistent: string; 
+
   ref = firebase.database().ref('/employees');
   correctEmployee = {};
   // employee = {}
@@ -20,11 +23,13 @@ export class HomePage {
     private loginService: LoginService
   )
   {
-    this.getEmployeeInfo(this.route.snapshot.paramMap.get('email'));
+    HomePage.email = this.route.snapshot.paramMap.get('email');
+    // HomePage.emailConsistent = HomePage.email;
+    this.getEmployeeInfo(HomePage.email);
   }
 
   getEmployeeInfo(email) {
-    console.log(email);
+    console.log(HomePage.emailConsistent);
     this.loginService.user = email;
   //   firebase.database().ref('employees/').orderByChild('email').equalTo(email).on('value', resp => {
   //     resp.forEach(childSnapshot => {

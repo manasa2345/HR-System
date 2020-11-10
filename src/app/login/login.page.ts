@@ -16,6 +16,7 @@ export class LoginPage implements OnInit {
   loginForm: FormGroup;
   errorMessage: string = '';
   user:any = {};
+  logoimg: any = "../assets/img/logo.png";
 
 
   constructor(

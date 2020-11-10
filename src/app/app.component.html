@@ -3,16 +3,17 @@
     <ion-header>
       <!-- <ion-img [src]="../assets/img/logo.png"></ion-img> -->
       <ion-toolbar color="primary">
-        <ion-title>
+        <!-- <ion-title>
           Idea Elan
-        </ion-title>
+        </ion-title> -->
+        <ion-img [src]="logoimg" style="height: 120px; width: auto;"></ion-img>
       </ion-toolbar>
     </ion-header>
 
     <ion-content>
       <ion-list>
        <ion-menu-toggle>
-        <ion-item lines="none" routerLink="/home">
+        <ion-item lines="none" [routerLink]="['/home', this.email]">
           <ion-icon name="home-outline" slot="start"></ion-icon>
           <ion-label>Dashboard</ion-label>
         </ion-item>
@@ -23,12 +24,6 @@
           <ion-label>Employees List</ion-label>
         </ion-item>
        </ion-menu-toggle>
-       <!-- <ion-menu-toggle>
-        <ion-item lines="none" routerLink="/asset">
-          <ion-icon name="desktop-outline" slot="start"></ion-icon>
-          <ion-label>Asset List</ion-label>
-        </ion-item>
-       </ion-menu-toggle>        -->
        <ion-menu-toggle>
         <ion-item lines="none" routerLink="/chat">
           <ion-icon name="chatbubble-ellipses-outline" slot="start"></ion-icon>
