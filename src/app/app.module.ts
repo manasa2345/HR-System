@@ -16,6 +16,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireDatabaseModule} from '@angular/fire/database';
+
+
 import { environment } from '../environments/environment.prod';
 
 @NgModule({
@@ -30,7 +32,7 @@ import { environment } from '../environments/environment.prod';
     AppRoutingModule, 
     AngularFireModule.initializeApp(environment.config),
     AngularFireAuthModule,
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
   ],
   providers: [
     StatusBar,

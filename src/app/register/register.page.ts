@@ -5,6 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import * as firebase from 'Firebase';
 import { FormControl, FormGroupDirective, FormBuilder, FormGroup, NgForm, Validators, FormArray } from '@angular/forms';
 import { NavController } from '@ionic/angular';
+import { DatePipe } from '@angular/common';
 
 
 @Component({
@@ -26,7 +27,8 @@ export class RegisterPage implements OnInit {
     private authObj: AngularFireAuth,
     private router: Router,
     private afdb: AngularFireDatabase,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private datePipe: DatePipe
     ) {
       this.registerForm = this.formBuilder.group({
         'id' : [null, Validators.required],
@@ -76,6 +78,9 @@ export class RegisterPage implements OnInit {
   register(value) {
     // alert('hi');
 
+    value.dob = this.datePipe.transform(value.dob, 'yyyy-MM-dd');
+    value.anniversary = this.datePipe.transform(value.anniversary, 'yyyy-MM-dd');
+    value.joinDate = this.datePipe.transform(value.joinDate, 'yyyy-MM-dd');
     
       this.authObj.createUserWithEmailAndPassword(value.email, value.password).then( (r) => {
         console.log(r);
