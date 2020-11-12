@@ -76,6 +76,9 @@ export class RegisterPage implements OnInit {
   register(value) {
     // alert('hi');
 
+    value.dob = value.dob.split('T')[0]; 
+    value.anniversary = value.anniversary.split('T')[0];
+    value.joinDate = value.joinDate.split('T')[0];
     
       this.authObj.createUserWithEmailAndPassword(value.email, value.password).then( (r) => {
         console.log(r);
