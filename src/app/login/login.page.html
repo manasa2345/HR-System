@@ -1,12 +1,14 @@
 <ion-header>
-  <ion-toolbar color="#f4f5f8">
+  <ion-toolbar color="primary">
     <ion-title>Login</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <div class="vertical-center" >
-    <ion-img [src]="logoimg"></ion-img>
+    <div class="center" style="background-color: #3880ff;" >
+      <ion-img [src]="logoimg"></ion-img>
+    </div>
     <form [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
       <ion-col size="12" size-sm="8" offset-sm="2" text-center>
         <ion-card>
